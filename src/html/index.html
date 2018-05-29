@@ -14,6 +14,7 @@
       <div>
         <button v-on:click="submit">Tweet <i class="fab fa-twitter" style="color:#00aced"></i></button>
         <span>{{ charCount }}</span>
+        <span v-if="done">DONE</span>
       </div>    
     </div>
     <script type="text/javascript">
@@ -22,6 +23,7 @@
       data: {
         body: '',
         charCount: 140,
+        done: false,
       },
       methods: {
         submit: () => {
@@ -35,7 +37,8 @@
             axios.post('https://hooks.slack.com/services/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', {
               text: app.body,
             }).then( response => {
-              console.log(response);
+              app.done = true;
+              setTimeout( () => { app.done = false }, 2500);
             }).catch( error => {
               console.log(error);
             });
