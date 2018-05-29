@@ -20,7 +20,9 @@ app.on('ready', () => {
       width: 320, 
       minWidth: 320,
       height: 130,
-      minHeight: 130
+      minHeight: 130,
+      autoHideMenuBar: true,
+      resizable: false,
     }
   );
   mainWindow.loadURL('file://' + __dirname + '/src/html/index.html');
