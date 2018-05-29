@@ -4,16 +4,41 @@
     <meta charset="UTF-8">
     <title></title>
     <script src="../script/vue.js"></script>
+    <link rel="stylesheet" href="../stylesheet/default.css" type="text/css" media="screen" charset="utf-8">
+    <script defer src="../fontawesome/svg-with-js/js/fontawesome-all.min.js"></script>
   </head>
   <body>
     <div id="app">
-      <h1>{{ message }}</h1>   
+      <textarea id="input-box" v-model="body" rows="5"> </textarea>
+      <div>
+        <button v-on:click="submit">Tweet <i class="fab fa-twitter" style="color:#00aced"></i></button>
+        <span>{{ charCount }}</span>
+      </div>    
     </div>
     <script type="text/javascript">
     var app = new Vue({
       el: '#app',
       data: {
-        message: 'Hello Vue!'
+        body: '',
+        charCount: 140,
+      },
+      methods: {
+        submit: () => {
+          let c = app.charCount;
+          if ( c >= 130 ) {
+            console.log("Tweet");
+          } else if ( c <= 30) {
+            console.log("tweet");
+          } else {
+            console.log("slack");
+          }
+          app.body = ""; // init form
+        }
+      },
+      watch: {
+        body: () => {
+          app.charCount = (140 - app.body.length);
+        }
       }
     })
     </script>
