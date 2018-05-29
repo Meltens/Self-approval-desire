@@ -1,0 +1,26 @@
+{
+  "name": "self-approval-desire",
+  "version": "1.0.0",
+  "description": "OriginalTwitterClient",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Meltens/Self-approval-desire.git"
+  },
+  "keywords": [
+    "twitter",
+    "slack"
+  ],
+  "author": "Meltens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Meltens/Self-approval-desire/issues"
+  },
+  "homepage": "https://github.com/Meltens/Self-approval-desire#readme",
+  "devDependencies": {
+    "electron": "^2.0.2"
+  }
+}
