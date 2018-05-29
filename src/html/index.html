@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <script src="../script/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="../stylesheet/default.css" type="text/css" media="screen" charset="utf-8">
     <script defer src="../fontawesome/svg-with-js/js/fontawesome-all.min.js"></script>
   </head>
@@ -31,6 +32,13 @@
             console.log("tweet");
           } else {
             console.log("slack");
+            axios.post('https://hooks.slack.com/services/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', {
+              text: app.body,
+            }).then( response => {
+              console.log(response);
+            }).catch( error => {
+              console.log(error);
+            });
           }
           app.body = ""; // init form
         }
