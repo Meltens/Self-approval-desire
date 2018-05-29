@@ -23,6 +23,7 @@ app.on('ready', () => {
       minHeight: 130,
       autoHideMenuBar: true,
       resizable: false,
+      icon:'./src/images/icon.png'
     }
   );
   mainWindow.loadURL('file://' + __dirname + '/src/html/index.html');
