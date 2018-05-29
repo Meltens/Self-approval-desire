@@ -34,6 +34,7 @@
             console.log("tweet");
           } else {
             console.log("slack");
+            // You are slack hooks url
             axios.post('https://hooks.slack.com/services/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', {
               text: app.body,
             }).then( response => {
